@@ -5,6 +5,7 @@ const focusAreas = [
   "Git 与工程化开发",
   "计算机基础知识",
   "长期项目与技术写作",
+  "大模型入门",
 ];
 
 const projectSeeds = [
@@ -26,6 +27,7 @@ const plans = [
   "完善个人网站首页",
   "整理 About 页面内容",
   "开始记录第一篇技术学习日志",
+  "每日总结复盘",
 ];
 
 export default function Home() {
