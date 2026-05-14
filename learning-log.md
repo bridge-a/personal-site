@@ -517,7 +517,14 @@ Tailwind：这些结构长什么样？
         </section>
   ```
 
+- 使用github进行push的时候，仓库不统计push的contribution
+
+  大概率是因为本地设置的user.name和user.email和github里边不一致
+
+  user.name是创建的时候那个用户名，不是后来设置的真实姓名
+
 ## 明天准备做什么
+
 - 完善 Projects 页面
 - 开始整理个人网站项目本身作为第一个项目
 
