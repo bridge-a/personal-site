@@ -109,6 +109,10 @@ export const metadata = {
 };
 ```
 
+这里注意：**title 间接可见，description 默认不可见**
+
+title在页面标题那里能看到，description一般不可见，是给机器看的
+
 Next.js会帮我生成类似的HTML:
 
 ```
@@ -465,3 +469,59 @@ Tailwind：这些结构长什么样？
 数组 + map：重复的内容如何从数据生成？
 ```
 
+# Day 4
+
+## 今天完成了什么
+- 完善 About 页面
+- 添加个人介绍、学习方向和学习原则
+- 给 About 页面单独设置 metadata
+
+## 今天学到的东西
+- layout.tsx 可以设置网站整体结构
+
+- page.tsx 可以设置页面内容
+
+- 每个页面可以有自己的 metadata
+
+  页面正文里能看到的内容：
+  h1、p、div、section、li 等 JSX 标签里的文字
+
+  页面正文里默认看不到的内容：
+  metadata.title
+  metadata.description
+
+  **title 间接可见，description 默认不可见。**
+
+  但是 title 比较特殊，因为浏览器会把它显示在标签页标题上，所以能看到
+
+- 数组和 map 可以继续用于渲染列表内容
+
+- 每个页面page.tsx中有export const metadata: Metadata
+
+  还会有export default function AboutPage()这个算是整个主体显示
+
+  在里边用不同section写不同的模块内容
+
+  至于section里可以提前在代码开头提前定义数组，然后使用map进行在section里索引进行显示，像这样：
+
+  ```
+  <section className="mt-16">
+          <h2 className="text-2xl font-bold">当前学习方向</h2>
+          <div className="mt-6 space-y-4">
+            {learningTracks.map((track) => (
+              <div key={track} className="rounded-lg border border-gray-200 p-5">
+                {track}
+              </div>
+            ))}
+          </div>
+        </section>
+  ```
+
+## 明天准备做什么
+- 完善 Projects 页面
+- 开始整理个人网站项目本身作为第一个项目
+
+## 今天的感受
+
+- 今天发现 About 页面其实是在复用首页学到的结构化方法。
+- 开始感觉到网站不是一次性写完的，而是每天迭代一点点长出来的。
