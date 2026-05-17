@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "项目 | Bridge",
   description: "Bridge 的项目实践、练手作品和长期开发记录。",
 };
 
-const projects = [
+type Project = {
+  title: string;
+  status: string;
+  description: string;
+  techStack: string[];
+  progress: string[];
+  href?: string;
+};
+
+const projects: Project[] = [
   {
     title: "个人网站",
     status: "进行中",
@@ -17,7 +27,9 @@ const projects = [
       "完成基础路由",
       "完成首页和 About 页面",
       "开始整理项目展示页",
+      "创建个人网站项目详情页",
     ],
+    href: "/projects/personal-site",
   },
   {
     title: "学习日志系统",
@@ -84,6 +96,19 @@ export default function ProjectsPage() {
                 ))}
               </ul>
             </div>
+
+            {project.href ? (
+              <Link
+                href={project.href}
+                className="mt-6 inline-block rounded-md bg-black px-4 py-2 text-sm font-medium text-white"
+              >
+                查看详情
+              </Link>
+            ) : (
+              <span className="mt-6 inline-block text-sm text-gray-400">
+                详情页规划中
+              </span>
+            )}
           </article>
         ))}
       </section>
