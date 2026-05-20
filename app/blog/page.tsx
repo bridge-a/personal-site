@@ -27,6 +27,7 @@ const posts: Post[] = [
     date: "2026-05-12",
     summary: "记录我对 app 目录、page.tsx、layout.tsx 和路由规则的理解。",
     tags: ["Next.js", "App Router"],
+    href: "/blog/day-2-nextjs-routing",
   },
 ];
 
